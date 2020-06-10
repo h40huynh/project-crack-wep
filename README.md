@@ -30,7 +30,7 @@ Bước này thực hiện để chắc chắn rằng card wifi đang nằm tron
 aireplay-ng -9 -a 7C:8B:CA:2E:62:CE wlan0mon
 ```
 
-![Test packet injection](images\testinjectionpacket.png)
+![Test packet injection](images/testinjectionpacket.png)
 
 Nếu phần trăm kết quả trả về quá thấp hay bằng 0 thì packet injection sẽ không hoạt động.
 
@@ -42,7 +42,7 @@ Nếu phần trăm kết quả trả về quá thấp hay bằng 0 thì packet i
 $ airodump-ng -c 11 --bssid 7C:8B:CA:2E:62:CE -w output wlan0mon
 ```
 
-![Test packet injection](images\airodumpforiv.png)
+![Test packet injection](images/airodumpforiv.png)
 
 ## Bước 4 -
 
@@ -50,6 +50,6 @@ $ airodump-ng -c 11 --bssid 7C:8B:CA:2E:62:CE -w output wlan0mon
 $ aireplay-ng -1 0 -a 7C:8B:CA:2E:62:CE -h 8C:F5:A3:1E:4E:37 wlan0mon
 ```
 
-![](images\aireplay1.png)
+![](images/aireplay1.png)
 
 ## Bước 5 -
