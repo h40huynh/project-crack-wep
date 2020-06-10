@@ -8,7 +8,7 @@ Sử dụng **airodump-ng** để tìm kiếm các access point (AP) đang dùng
 $ airodump-ng wlan0mon
 ```
 
-![Dùng airodump tìm kiếm access point](images\airodumpforvictim.png)
+![Dùng airodump tìm kiếm access point](.\images\airodumpforvictim.png)
 
 Các thông tin cần chú ý:
 
