@@ -84,7 +84,7 @@ Chạy aircrack-ng với file output của airodump-ng để được kết 
 
 ![CommView](images/Commview/cv1.png)
 
-Sau đó, thực hiện fake authentication và arp packet injection như bước 4 của phần Airodump-ng để AP tạo ra nhiều IV hơn.
+Sau đó, thực hiện fake authentication và arp replay như bước 4 của phần Airodump-ng để AP tạo ra nhiều IV hơn, đẩy nhanh quá trình thu thập IV.
 
 ![CommView](images/Commview/cv2.png)
 
