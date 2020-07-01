@@ -1,3 +1,38 @@
+# Thông tin
+
+## Thành viên nhóm
+
+- Huỳnh Nhật Hào - 17520444
+- Huỳnh Minh Chủ - 17520293
+
+## Thông số thiết bị
+
+Attacker
+
+```
+OS: Kali linux 2020 64 bit
+RAM: 2GB
+CPU: i5 4200M
+```
+
+```
+OS: Windows 10
+RAM: 8GB
+CPU: i5 4200M
+```
+
+Wifi Adapter
+
+```
+BT-N9100 Beini USB Wifi Adapter
+```
+
+Access Point
+
+```
+TPLink TL722WN Version 1
+```
+
 # Airodump-ng
 
 Airodump-ng được sử dụng để bắt gói tin wifi và thích hợp để thu thập WEP IV.
