@@ -70,7 +70,7 @@ aireplay-ng -3 -b 7C:8B:CA:2E:62:CE -h A4:E9:75:4B:D6:D9 wlan0mon
 
 ## Bước 5 - Dùng aircrack để tìm key
 
-Với 64 bit key cần khoảng 20,000 packets. Khi đủ gói dừng airodump để có file cap.
+Với 64 bit key cần khoảng 20,000 packets. Khi đủ gói dừng airodump để có file cap (hoặc có thể dùng aircrack luôn mà chưa cần dừng phòng trường hợp chưa đủ IV).
 
 ![Test packet injection](images/Airodump/ad6.png)
 
@@ -88,10 +88,50 @@ Sau đó, thực hiện fake authentication và arp packet injection như b�
 
 ![CommView](images/Commview/cv2.png)
 
-Sau khi thu được đủ packet, dừng capture sẽ thu được các file log, tiến hành export những file log thành file cap để đưa vào aircrack.
+Trong quá trình thu thập Commview sẽ lưu lại các file log, tiến hành export những file log thành file cap để đưa vào aircrack.
 
 ![CommView](images/Commview/cv3en.png)
 
 Thực hiện tìm key với aircrack-ng và file cap vừa export.
 
 ![CommView](images/Commview/cv4rs.png)
+
+# Kismet
+
+Kismet là công cụ để sniff Wifi Network, ngoài ra còn được dùng để bắt gói tin tương tự airodump-ng.
+
+Mặc định các gói tin bắt với Kismet sẽ được lưu lại trong file log dạng kismet, vì vậy trước hết cần sửa dạng log thành pcapng (trong /etc/kismet/kismet_logging) để có thể dùng trong aircrack-ng:
+
+![Kismet](images/Kismet/3.png)
+
+Giao diện chính của Kismet:
+
+![Kismet](images/Kismet/1.png)
+
+Tìm target và xem thông tin chi tiết:
+
+![Kismet](images/Kismet/2.png)
+
+Khi đã biết các thông tin về AP, chỉnh sửa wlan0mon ở chế độ lock channel (chọn đúng channel của target):
+
+![Kismet](images/Kismet/4.png)
+
+Cũng giống như các tool bên trên, chúng ta cần dùng aireplay ở chế độ ARP Replay để tăng tốc quá trình thu thập IV. Lúc này output của kismet là file pcapng, cần dùng tshark để chuyển thành dạng pcap để dùng trong aircrack-ng:
+
+![Kismet](images/Kismet/8.png)
+
+Dùng output này để sử dụng cho aircrack:
+
+![Kismet](images/Kismet/7.png)
+
+# Thực hiện với key ngẫu nhiên hơn
+
+Thử với 64 bit key là: UIT@@
+
+Chọn tool airodump để thực hiện. Nhưng với 20,000 IV vẫn chưa thể tìm được key:
+
+![UIT@@](images/Other/1.png)
+
+Tiếp tục để airodump-ng chạy đến khoảng 25,000 IV:
+
+![UIT@@](images/Other/2.png)
